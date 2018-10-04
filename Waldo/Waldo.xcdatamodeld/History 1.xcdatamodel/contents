@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14315.18" systemVersion="18A391" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Panel" representedClassName="Panel" syncable="YES">
+        <attribute name="closedAt" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="isActive" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="isClosed" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="positionIndex" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="width" attributeType="Float" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="currentVisit" maxCount="1" deletionRule="Nullify" destinationEntity="Visit" syncable="YES"/>
+    </entity>
+    <entity name="Resource" representedClassName="Resource" syncable="YES">
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="url" attributeType="String" syncable="YES"/>
+        <attribute name="visitCount" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="latestVisit" maxCount="1" deletionRule="Nullify" destinationEntity="Visit" syncable="YES"/>
+    </entity>
+    <entity name="Visit" representedClassName="Visit" syncable="YES">
+        <attribute name="intentText" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="intentType" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="urlRequest" attributeType="Transformable" customClassName="NSURLRequest" syncable="YES"/>
+        <relationship name="previous" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Visit" syncable="YES"/>
+        <relationship name="resource" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Resource" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Resource" positionX="-63" positionY="27" width="128" height="105"/>
+        <element name="Panel" positionX="-54" positionY="9" width="128" height="135"/>
+        <element name="Visit" positionX="-63" positionY="-18" width="128" height="150"/>
+    </elements>
+</model>

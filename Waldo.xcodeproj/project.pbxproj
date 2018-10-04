@@ -1,0 +1,646 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6502BCF41FF590460040BCFB /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6502BCF31FF590460040BCFB /* Task.swift */; };
+		650303632152AA8000C87080 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650303622152AA8000C87080 /* Utils.swift */; };
+		651D76F31E159CA200C8C035 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651D76F21E159CA200C8C035 /* AppDelegate.swift */; };
+		651D76F51E159CA200C8C035 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651D76F41E159CA200C8C035 /* ViewController.swift */; };
+		651D76F71E159CA200C8C035 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 651D76F61E159CA200C8C035 /* Assets.xcassets */; };
+		651D76FA1E159CA200C8C035 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 651D76F81E159CA200C8C035 /* Main.storyboard */; };
+		651D77051E159CA200C8C035 /* WaldoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651D77041E159CA200C8C035 /* WaldoTests.swift */; };
+		651D77101E159CA200C8C035 /* WaldoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651D770F1E159CA200C8C035 /* WaldoUITests.swift */; };
+		651D77201E169ED100C8C035 /* PanelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651D771F1E169ED100C8C035 /* PanelViewController.swift */; };
+		65378DE11F5C85B700B542B9 /* WaldoWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65378DE01F5C85B700B542B9 /* WaldoWebView.swift */; };
+		6543002620682067000FC68F /* Panel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6543002220682067000FC68F /* Panel+CoreDataClass.swift */; };
+		6543002720682067000FC68F /* Panel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6543002320682067000FC68F /* Panel+CoreDataProperties.swift */; };
+		6543002820682067000FC68F /* Visit+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6543002420682067000FC68F /* Visit+CoreDataClass.swift */; };
+		6543002920682067000FC68F /* Visit+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6543002520682067000FC68F /* Visit+CoreDataProperties.swift */; };
+		6543FFF2205F162F000FC68F /* Waldo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6543FFF0205F162F000FC68F /* Waldo.xcdatamodeld */; };
+		65644A0D2082920300903ADF /* Resource+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65644A0B2082920300903ADF /* Resource+CoreDataClass.swift */; };
+		65644A0E2082920300903ADF /* Resource+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65644A0C2082920300903ADF /* Resource+CoreDataProperties.swift */; };
+		656BAFED2161B6D000E9B691 /* WaldoWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656BAFEC2161B6D000E9B691 /* WaldoWindowController.swift */; };
+		656BAFEF2161BB2C00E9B691 /* LICENCE in Resources */ = {isa = PBXBuildFile; fileRef = 656BAFEE2161BB2C00E9B691 /* LICENCE */; };
+		65AB4EF11FF2DEE600790D31 /* TaskFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AB4EF01FF2DEE600790D31 /* TaskFieldDelegate.swift */; };
+		65BFB7B320D59949006BADDD /* WaldoPersistentContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BFB7B220D59949006BADDD /* WaldoPersistentContainer.swift */; };
+		65CDE7291F4667ED004D8F49 /* ResizeHandleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CDE7281F4667ED004D8F49 /* ResizeHandleView.swift */; };
+		65D855792043680C007E209D /* TaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D855782043680C007E209D /* TaskView.swift */; };
+		65E311401F49FBB30004CA42 /* NavigationEvent.js in Resources */ = {isa = PBXBuildFile; fileRef = 65E3113F1F49FBB30004CA42 /* NavigationEvent.js */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		651D77011E159CA200C8C035 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 651D76E71E159CA200C8C035 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 651D76EE1E159CA200C8C035;
+			remoteInfo = HyperSomething;
+		};
+		651D770C1E159CA200C8C035 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 651D76E71E159CA200C8C035 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 651D76EE1E159CA200C8C035;
+			remoteInfo = HyperSomething;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		6502BCF31FF590460040BCFB /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		650303622152AA8000C87080 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		651CDB021FA5359E00A5E442 /* Waldo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Waldo.entitlements; sourceTree = "<group>"; };
+		651D76EF1E159CA200C8C035 /* Waldo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Waldo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		651D76F21E159CA200C8C035 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		651D76F41E159CA200C8C035 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		651D76F61E159CA200C8C035 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		651D76F91E159CA200C8C035 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		651D76FB1E159CA200C8C035 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		651D77001E159CA200C8C035 /* WaldoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WaldoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		651D77041E159CA200C8C035 /* WaldoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaldoTests.swift; sourceTree = "<group>"; };
+		651D77061E159CA200C8C035 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		651D770B1E159CA200C8C035 /* WaldoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WaldoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		651D770F1E159CA200C8C035 /* WaldoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaldoUITests.swift; sourceTree = "<group>"; };
+		651D77111E159CA200C8C035 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		651D771F1E169ED100C8C035 /* PanelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PanelViewController.swift; sourceTree = "<group>"; };
+		65378DE01F5C85B700B542B9 /* WaldoWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaldoWebView.swift; sourceTree = "<group>"; };
+		6543002220682067000FC68F /* Panel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Panel+CoreDataClass.swift"; sourceTree = "<group>"; };
+		6543002320682067000FC68F /* Panel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Panel+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		6543002420682067000FC68F /* Visit+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Visit+CoreDataClass.swift"; sourceTree = "<group>"; };
+		6543002520682067000FC68F /* Visit+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Visit+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		6543FFF1205F162F000FC68F /* History.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = History.xcdatamodel; sourceTree = "<group>"; };
+		65644A0B2082920300903ADF /* Resource+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Resource+CoreDataClass.swift"; sourceTree = "<group>"; };
+		65644A0C2082920300903ADF /* Resource+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Resource+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		656BAFEC2161B6D000E9B691 /* WaldoWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaldoWindowController.swift; sourceTree = "<group>"; };
+		656BAFEE2161BB2C00E9B691 /* LICENCE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENCE; sourceTree = "<group>"; };
+		656BAFF02161C14600E9B691 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		658145F52164718900C8B5AD /* History 1.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "History 1.xcdatamodel"; sourceTree = "<group>"; };
+		658145F7216475DE00C8B5AD /* Waldo */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Waldo; sourceTree = "<group>"; };
+		658145F82164760C00C8B5AD /* Waldo */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Waldo; sourceTree = "<group>"; };
+		658145F92164767000C8B5AD /* waldo_screenshot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = waldo_screenshot.png; sourceTree = "<group>"; };
+		65AB4EF01FF2DEE600790D31 /* TaskFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskFieldDelegate.swift; sourceTree = "<group>"; };
+		65BFB7B220D59949006BADDD /* WaldoPersistentContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaldoPersistentContainer.swift; sourceTree = "<group>"; };
+		65CDE7281F4667ED004D8F49 /* ResizeHandleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResizeHandleView.swift; sourceTree = "<group>"; };
+		65D855782043680C007E209D /* TaskView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskView.swift; sourceTree = "<group>"; };
+		65E3113F1F49FBB30004CA42 /* NavigationEvent.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = NavigationEvent.js; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		651D76EC1E159CA200C8C035 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		651D76FD1E159CA200C8C035 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		651D77081E159CA200C8C035 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		651D76E61E159CA200C8C035 = {
+			isa = PBXGroup;
+			children = (
+				656BAFEE2161BB2C00E9B691 /* LICENCE */,
+				656BAFF02161C14600E9B691 /* README.md */,
+				658145F92164767000C8B5AD /* waldo_screenshot.png */,
+				651D76F11E159CA200C8C035 /* Waldo */,
+				658145F7216475DE00C8B5AD /* Waldo */,
+				658145F82164760C00C8B5AD /* Waldo */,
+				651D77031E159CA200C8C035 /* WaldoTests */,
+				651D770E1E159CA200C8C035 /* WaldoUITests */,
+				651D76F01E159CA200C8C035 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		651D76F01E159CA200C8C035 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				651D76EF1E159CA200C8C035 /* Waldo.app */,
+				651D77001E159CA200C8C035 /* WaldoTests.xctest */,
+				651D770B1E159CA200C8C035 /* WaldoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		651D76F11E159CA200C8C035 /* Waldo */ = {
+			isa = PBXGroup;
+			children = (
+				651D76F81E159CA200C8C035 /* Main.storyboard */,
+				6543002220682067000FC68F /* Panel+CoreDataClass.swift */,
+				6543002320682067000FC68F /* Panel+CoreDataProperties.swift */,
+				6543002420682067000FC68F /* Visit+CoreDataClass.swift */,
+				6543002520682067000FC68F /* Visit+CoreDataProperties.swift */,
+				65644A0B2082920300903ADF /* Resource+CoreDataClass.swift */,
+				65644A0C2082920300903ADF /* Resource+CoreDataProperties.swift */,
+				65BFB7B220D59949006BADDD /* WaldoPersistentContainer.swift */,
+				656BAFEC2161B6D000E9B691 /* WaldoWindowController.swift */,
+				651D76F21E159CA200C8C035 /* AppDelegate.swift */,
+				651D76F41E159CA200C8C035 /* ViewController.swift */,
+				651D771F1E169ED100C8C035 /* PanelViewController.swift */,
+				65CDE7281F4667ED004D8F49 /* ResizeHandleView.swift */,
+				65378DE01F5C85B700B542B9 /* WaldoWebView.swift */,
+				65D855782043680C007E209D /* TaskView.swift */,
+				65AB4EF01FF2DEE600790D31 /* TaskFieldDelegate.swift */,
+				6502BCF31FF590460040BCFB /* Task.swift */,
+				650303622152AA8000C87080 /* Utils.swift */,
+				6543FFF0205F162F000FC68F /* Waldo.xcdatamodeld */,
+				65E3113F1F49FBB30004CA42 /* NavigationEvent.js */,
+				651D76FB1E159CA200C8C035 /* Info.plist */,
+				651CDB021FA5359E00A5E442 /* Waldo.entitlements */,
+				651D76F61E159CA200C8C035 /* Assets.xcassets */,
+			);
+			path = Waldo;
+			sourceTree = "<group>";
+		};
+		651D77031E159CA200C8C035 /* WaldoTests */ = {
+			isa = PBXGroup;
+			children = (
+				651D77041E159CA200C8C035 /* WaldoTests.swift */,
+				651D77061E159CA200C8C035 /* Info.plist */,
+			);
+			path = WaldoTests;
+			sourceTree = "<group>";
+		};
+		651D770E1E159CA200C8C035 /* WaldoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				651D770F1E159CA200C8C035 /* WaldoUITests.swift */,
+				651D77111E159CA200C8C035 /* Info.plist */,
+			);
+			path = WaldoUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		651D76EE1E159CA200C8C035 /* Waldo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 651D77141E159CA200C8C035 /* Build configuration list for PBXNativeTarget "Waldo" */;
+			buildPhases = (
+				651D76EB1E159CA200C8C035 /* Sources */,
+				651D76EC1E159CA200C8C035 /* Frameworks */,
+				651D76ED1E159CA200C8C035 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Waldo;
+			productName = HyperSomething;
+			productReference = 651D76EF1E159CA200C8C035 /* Waldo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		651D76FF1E159CA200C8C035 /* WaldoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 651D77171E159CA200C8C035 /* Build configuration list for PBXNativeTarget "WaldoTests" */;
+			buildPhases = (
+				651D76FC1E159CA200C8C035 /* Sources */,
+				651D76FD1E159CA200C8C035 /* Frameworks */,
+				651D76FE1E159CA200C8C035 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				651D77021E159CA200C8C035 /* PBXTargetDependency */,
+			);
+			name = WaldoTests;
+			productName = HyperSomethingTests;
+			productReference = 651D77001E159CA200C8C035 /* WaldoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		651D770A1E159CA200C8C035 /* WaldoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 651D771A1E159CA200C8C035 /* Build configuration list for PBXNativeTarget "WaldoUITests" */;
+			buildPhases = (
+				651D77071E159CA200C8C035 /* Sources */,
+				651D77081E159CA200C8C035 /* Frameworks */,
+				651D77091E159CA200C8C035 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				651D770D1E159CA200C8C035 /* PBXTargetDependency */,
+			);
+			name = WaldoUITests;
+			productName = HyperSomethingUITests;
+			productReference = 651D770B1E159CA200C8C035 /* WaldoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		651D76E71E159CA200C8C035 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0930;
+				ORGANIZATIONNAME = DFeichtinger;
+				TargetAttributes = {
+					651D76EE1E159CA200C8C035 = {
+						CreatedOnToolsVersion = 8.2.1;
+						LastSwiftMigration = 0900;
+						ProvisioningStyle = Automatic;
+					};
+					651D76FF1E159CA200C8C035 = {
+						CreatedOnToolsVersion = 8.2.1;
+						LastSwiftMigration = 0900;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 651D76EE1E159CA200C8C035;
+					};
+					651D770A1E159CA200C8C035 = {
+						CreatedOnToolsVersion = 8.2.1;
+						LastSwiftMigration = 0900;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 651D76EE1E159CA200C8C035;
+					};
+				};
+			};
+			buildConfigurationList = 651D76EA1E159CA200C8C035 /* Build configuration list for PBXProject "Waldo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 651D76E61E159CA200C8C035;
+			productRefGroup = 651D76F01E159CA200C8C035 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				651D76EE1E159CA200C8C035 /* Waldo */,
+				651D76FF1E159CA200C8C035 /* WaldoTests */,
+				651D770A1E159CA200C8C035 /* WaldoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		651D76ED1E159CA200C8C035 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				651D76F71E159CA200C8C035 /* Assets.xcassets in Resources */,
+				65E311401F49FBB30004CA42 /* NavigationEvent.js in Resources */,
+				656BAFEF2161BB2C00E9B691 /* LICENCE in Resources */,
+				651D76FA1E159CA200C8C035 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		651D76FE1E159CA200C8C035 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		651D77091E159CA200C8C035 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		651D76EB1E159CA200C8C035 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6543002720682067000FC68F /* Panel+CoreDataProperties.swift in Sources */,
+				651D76F51E159CA200C8C035 /* ViewController.swift in Sources */,
+				65644A0D2082920300903ADF /* Resource+CoreDataClass.swift in Sources */,
+				651D76F31E159CA200C8C035 /* AppDelegate.swift in Sources */,
+				65CDE7291F4667ED004D8F49 /* ResizeHandleView.swift in Sources */,
+				65D855792043680C007E209D /* TaskView.swift in Sources */,
+				65BFB7B320D59949006BADDD /* WaldoPersistentContainer.swift in Sources */,
+				651D77201E169ED100C8C035 /* PanelViewController.swift in Sources */,
+				6543002920682067000FC68F /* Visit+CoreDataProperties.swift in Sources */,
+				650303632152AA8000C87080 /* Utils.swift in Sources */,
+				6543FFF2205F162F000FC68F /* Waldo.xcdatamodeld in Sources */,
+				65378DE11F5C85B700B542B9 /* WaldoWebView.swift in Sources */,
+				65AB4EF11FF2DEE600790D31 /* TaskFieldDelegate.swift in Sources */,
+				6543002620682067000FC68F /* Panel+CoreDataClass.swift in Sources */,
+				6543002820682067000FC68F /* Visit+CoreDataClass.swift in Sources */,
+				6502BCF41FF590460040BCFB /* Task.swift in Sources */,
+				65644A0E2082920300903ADF /* Resource+CoreDataProperties.swift in Sources */,
+				656BAFED2161B6D000E9B691 /* WaldoWindowController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		651D76FC1E159CA200C8C035 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				651D77051E159CA200C8C035 /* WaldoTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		651D77071E159CA200C8C035 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				651D77101E159CA200C8C035 /* WaldoUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		651D77021E159CA200C8C035 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 651D76EE1E159CA200C8C035 /* Waldo */;
+			targetProxy = 651D77011E159CA200C8C035 /* PBXContainerItemProxy */;
+		};
+		651D770D1E159CA200C8C035 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 651D76EE1E159CA200C8C035 /* Waldo */;
+			targetProxy = 651D770C1E159CA200C8C035 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		651D76F81E159CA200C8C035 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				651D76F91E159CA200C8C035 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		651D77121E159CA200C8C035 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		651D77131E159CA200C8C035 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+			};
+			name = Release;
+		};
+		651D77151E159CA200C8C035 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				DATA_DIR = "Waldo Debug";
+				INFOPLIST_FILE = Waldo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.dfeichtinger.waldo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		651D77161E159CA200C8C035 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				DATA_DIR = Waldo;
+				INFOPLIST_FILE = Waldo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.dfeichtinger.waldo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+		651D77181E159CA200C8C035 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = WaldoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.dfeichtinger.waldoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Waldo.app/Contents/MacOS/Waldo";
+			};
+			name = Debug;
+		};
+		651D77191E159CA200C8C035 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = WaldoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.dfeichtinger.waldoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Waldo.app/Contents/MacOS/Waldo";
+			};
+			name = Release;
+		};
+		651D771B1E159CA200C8C035 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = WaldoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.dfeichtinger.waldoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
+				TEST_TARGET_NAME = Waldo;
+			};
+			name = Debug;
+		};
+		651D771C1E159CA200C8C035 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = WaldoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.dfeichtinger.waldoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
+				TEST_TARGET_NAME = Waldo;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		651D76EA1E159CA200C8C035 /* Build configuration list for PBXProject "Waldo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				651D77121E159CA200C8C035 /* Debug */,
+				651D77131E159CA200C8C035 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		651D77141E159CA200C8C035 /* Build configuration list for PBXNativeTarget "Waldo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				651D77151E159CA200C8C035 /* Debug */,
+				651D77161E159CA200C8C035 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		651D77171E159CA200C8C035 /* Build configuration list for PBXNativeTarget "WaldoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				651D77181E159CA200C8C035 /* Debug */,
+				651D77191E159CA200C8C035 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		651D771A1E159CA200C8C035 /* Build configuration list for PBXNativeTarget "WaldoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				651D771B1E159CA200C8C035 /* Debug */,
+				651D771C1E159CA200C8C035 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		6543FFF0205F162F000FC68F /* Waldo.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				658145F52164718900C8B5AD /* History 1.xcdatamodel */,
+				6543FFF1205F162F000FC68F /* History.xcdatamodel */,
+			);
+			currentVersion = 6543FFF1205F162F000FC68F /* History.xcdatamodel */;
+			path = Waldo.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 651D76E71E159CA200C8C035 /* Project object */;
+}

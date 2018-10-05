@@ -79,8 +79,8 @@
 		656BAFEE2161BB2C00E9B691 /* LICENCE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENCE; sourceTree = "<group>"; };
 		656BAFF02161C14600E9B691 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		658145F52164718900C8B5AD /* History 1.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "History 1.xcdatamodel"; sourceTree = "<group>"; };
-		658145F7216475DE00C8B5AD /* Waldo */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Waldo; sourceTree = "<group>"; };
-		658145F82164760C00C8B5AD /* Waldo */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Waldo; sourceTree = "<group>"; };
+		658145F7216475DE00C8B5AD /* Waldo */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Waldo; sourceTree = "<group>"; };
+		658145F82164760C00C8B5AD /* Waldo */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Waldo; sourceTree = "<group>"; };
 		658145F92164767000C8B5AD /* waldo_screenshot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = waldo_screenshot.png; sourceTree = "<group>"; };
 		65AB4EF01FF2DEE600790D31 /* TaskFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskFieldDelegate.swift; sourceTree = "<group>"; };
 		65BFB7B220D59949006BADDD /* WaldoPersistentContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaldoPersistentContainer.swift; sourceTree = "<group>"; };
@@ -255,8 +255,17 @@
 				TargetAttributes = {
 					651D76EE1E159CA200C8C035 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 2C3VEKGDSY;
 						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.HardenedRuntime = {
+								enabled = 1;
+							};
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
 					};
 					651D76FF1E159CA200C8C035 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -499,8 +508,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Waldo/Waldo.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DATA_DIR = "Waldo Debug";
+				DEVELOPMENT_TEAM = 2C3VEKGDSY;
+				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = Waldo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.dfeichtinger.waldo;
@@ -514,8 +527,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Waldo/Waldo.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DATA_DIR = Waldo;
+				DEVELOPMENT_TEAM = 2C3VEKGDSY;
+				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = Waldo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.dfeichtinger.waldo;

@@ -22,6 +22,8 @@
 		6543002820682067000FC68F /* Visit+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6543002420682067000FC68F /* Visit+CoreDataClass.swift */; };
 		6543002920682067000FC68F /* Visit+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6543002520682067000FC68F /* Visit+CoreDataProperties.swift */; };
 		6543FFF2205F162F000FC68F /* Waldo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6543FFF0205F162F000FC68F /* Waldo.xcdatamodeld */; };
+		65524C0D219E0CAC0067E47C /* ArchivedPanelViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65524C0B219E0CAC0067E47C /* ArchivedPanelViewItem.swift */; };
+		65524C0E219E0CAC0067E47C /* ArchivedPanelViewItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65524C0C219E0CAC0067E47C /* ArchivedPanelViewItem.xib */; };
 		65644A0D2082920300903ADF /* Resource+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65644A0B2082920300903ADF /* Resource+CoreDataClass.swift */; };
 		65644A0E2082920300903ADF /* Resource+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65644A0C2082920300903ADF /* Resource+CoreDataProperties.swift */; };
 		656BAFED2161B6D000E9B691 /* WaldoWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656BAFEC2161B6D000E9B691 /* WaldoWindowController.swift */; };
@@ -73,14 +75,15 @@
 		6543002420682067000FC68F /* Visit+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Visit+CoreDataClass.swift"; sourceTree = "<group>"; };
 		6543002520682067000FC68F /* Visit+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Visit+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		6543FFF1205F162F000FC68F /* History.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = History.xcdatamodel; sourceTree = "<group>"; };
+		65524C0B219E0CAC0067E47C /* ArchivedPanelViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchivedPanelViewItem.swift; sourceTree = "<group>"; };
+		65524C0C219E0CAC0067E47C /* ArchivedPanelViewItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArchivedPanelViewItem.xib; sourceTree = "<group>"; };
+		65524C0F219E713C0067E47C /* History 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "History 2.xcdatamodel"; sourceTree = "<group>"; };
 		65644A0B2082920300903ADF /* Resource+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Resource+CoreDataClass.swift"; sourceTree = "<group>"; };
 		65644A0C2082920300903ADF /* Resource+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Resource+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		656BAFEC2161B6D000E9B691 /* WaldoWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaldoWindowController.swift; sourceTree = "<group>"; };
 		656BAFEE2161BB2C00E9B691 /* LICENCE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENCE; sourceTree = "<group>"; };
 		656BAFF02161C14600E9B691 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		658145F52164718900C8B5AD /* History 1.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "History 1.xcdatamodel"; sourceTree = "<group>"; };
-		658145F7216475DE00C8B5AD /* Waldo */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Waldo; sourceTree = "<group>"; };
-		658145F82164760C00C8B5AD /* Waldo */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Waldo; sourceTree = "<group>"; };
 		658145F92164767000C8B5AD /* waldo_screenshot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = waldo_screenshot.png; sourceTree = "<group>"; };
 		65AB4EF01FF2DEE600790D31 /* TaskFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskFieldDelegate.swift; sourceTree = "<group>"; };
 		65BFB7B220D59949006BADDD /* WaldoPersistentContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaldoPersistentContainer.swift; sourceTree = "<group>"; };
@@ -121,8 +124,6 @@
 				656BAFF02161C14600E9B691 /* README.md */,
 				658145F92164767000C8B5AD /* waldo_screenshot.png */,
 				651D76F11E159CA200C8C035 /* Waldo */,
-				658145F7216475DE00C8B5AD /* Waldo */,
-				658145F82164760C00C8B5AD /* Waldo */,
 				651D77031E159CA200C8C035 /* WaldoTests */,
 				651D770E1E159CA200C8C035 /* WaldoUITests */,
 				651D76F01E159CA200C8C035 /* Products */,
@@ -154,6 +155,8 @@
 				651D76F21E159CA200C8C035 /* AppDelegate.swift */,
 				651D76F41E159CA200C8C035 /* ViewController.swift */,
 				651D771F1E169ED100C8C035 /* PanelViewController.swift */,
+				65524C0B219E0CAC0067E47C /* ArchivedPanelViewItem.swift */,
+				65524C0C219E0CAC0067E47C /* ArchivedPanelViewItem.xib */,
 				65CDE7281F4667ED004D8F49 /* ResizeHandleView.swift */,
 				65378DE01F5C85B700B542B9 /* WaldoWebView.swift */,
 				65D855782043680C007E209D /* TaskView.swift */,
@@ -309,6 +312,7 @@
 				651D76F71E159CA200C8C035 /* Assets.xcassets in Resources */,
 				65E311401F49FBB30004CA42 /* NavigationEvent.js in Resources */,
 				656BAFEF2161BB2C00E9B691 /* LICENCE in Resources */,
+				65524C0E219E0CAC0067E47C /* ArchivedPanelViewItem.xib in Resources */,
 				651D76FA1E159CA200C8C035 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -344,6 +348,7 @@
 				651D77201E169ED100C8C035 /* PanelViewController.swift in Sources */,
 				6543002920682067000FC68F /* Visit+CoreDataProperties.swift in Sources */,
 				650303632152AA8000C87080 /* Utils.swift in Sources */,
+				65524C0D219E0CAC0067E47C /* ArchivedPanelViewItem.swift in Sources */,
 				6543FFF2205F162F000FC68F /* Waldo.xcdatamodeld in Sources */,
 				65378DE11F5C85B700B542B9 /* WaldoWebView.swift in Sources */,
 				65AB4EF11FF2DEE600790D31 /* TaskFieldDelegate.swift in Sources */,
@@ -516,6 +521,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = Waldo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_BUNDLE_IDENTIFIER = org.dfeichtinger.waldo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
@@ -535,6 +541,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = Waldo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_BUNDLE_IDENTIFIER = org.dfeichtinger.waldo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
@@ -649,6 +656,7 @@
 		6543FFF0205F162F000FC68F /* Waldo.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				65524C0F219E713C0067E47C /* History 2.xcdatamodel */,
 				658145F52164718900C8B5AD /* History 1.xcdatamodel */,
 				6543FFF1205F162F000FC68F /* History.xcdatamodel */,
 			);

@@ -34,6 +34,18 @@ public class Panel: NSManagedObject {
         return panels
     }
     
+    class func currentlyClosed(context: NSManagedObjectContext) -> [Panel] {
+        var panels: [Panel] = []
+        do {
+            let fetchRequest: NSFetchRequest<Panel> = Panel.fetchRequest()
+            fetchRequest.predicate = NSPredicate.init(format: "isClosed = true")
+            panels = try context.fetch(fetchRequest).sorted { ($0.closedAt! as Date) < ($1.closedAt! as Date) }
+        } catch let error as NSError {
+            debugPrint("Could not fetch. \(error), \(error.userInfo)")
+        }
+        return panels
+    }
+    
     class func lastClosed(context: NSManagedObjectContext) -> Panel? {
         var panel: Panel? = nil
         do {

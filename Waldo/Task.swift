@@ -9,39 +9,64 @@ import AppKit
 
 class Task {
     let input: String
-    let intentType: IntentType!
-    let intentText: String!
-    let urlRequest: URLRequest!
+    var intentType: IntentType
+//    var urlRequest: URLRequest
+    var taskResults: [TaskResult] = []
+    
+    let commands = [
+        "!g": [
+            "description": "Google",
+            "urls": ["https://encrypted.google.com/search?q={{{s}}}"]
+        ],
+        "!maps": [
+            "description": "Google Maps",
+            "urls": ["https://www.google.com/maps?hl=en&q={{{s}}}"]
+        ],
+        "!a": [
+            "description": "Amazon",
+            "urls": [ "https://smile.amazon.com/s/ref=nb_sb_noss?url=search-alias%3Daps&field-keywords={{{s}}}" ]
+        ],
+        "!news": [
+            "description": "News",
+            "urls": ["https://bbc.co.uk", "https://theguardian.co.uk"]
+        ]
+    ]
     
     init(_ input: String) {
         self.input = input
-
-        var url = URL(string: input)
-
-        let inputArray = input.components(separatedBy: " ")
-
+        
+        var urls: [URL] = []
         let linkType = NSTextCheckingResult.CheckingType.link.rawValue
         let detector = try! NSDataDetector.init(types: linkType)
         let results = detector.matches(in: input, options: NSRegularExpression.MatchingOptions.anchored, range: NSMakeRange(0, input.count))
         
         if results.count > 0 {
-            url = results.first?.url
-            intentText = input
             intentType = .enteredURL
+            urls.append(results.first!.url!)
         } else {
             intentType = .searched
-            if inputArray.first == "!g" {
-                let searchString = inputArray[1...(inputArray.count - 1)]
-                intentText = searchString.joined(separator: " ")
-                url = URL(string: "https://encrypted.google.com/search?q=\(searchString.joined(separator: "%20"))")
+            let inputArray = input.components(separatedBy: " ")
+            if commands.keys.contains(inputArray.first!) {
+                var urlStrings: [String] = commands[inputArray.first!]!["urls"]! as! [String]
+                if inputArray.count > 1 {
+                    let searchString = inputArray[1...(inputArray.count - 1)].joined(separator: "%20")
+                    urlStrings = urlStrings.map { $0.replacingOccurrences(of: "{{{s}}}", with: searchString) }
+                }
+                urls = urlStrings.map { URL.init(string: $0)! }
             } else {
-                let searchString = inputArray.joined(separator: "%20")
-                intentText = input
-                url = URL(string: "https://duckduckgo.com/?q=\(searchString)")
+                urls.append(URL(string: "https://duckduckgo.com/?q=\(inputArray.joined(separator: "%20"))")!)
             }
         }
 
-        urlRequest = URLRequest(url: url!)
+        urls.forEach { (url) in
+            taskResults.append(TaskResult.init(intentType: intentType, intentText: input, urlRequest: URLRequest(url: url)))
+        }
     }
     
+}
+
+struct TaskResult {
+    let intentType: IntentType!
+    let intentText: String!
+    let urlRequest: URLRequest!
 }

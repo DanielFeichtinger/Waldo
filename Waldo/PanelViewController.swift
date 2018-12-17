@@ -56,10 +56,6 @@ class PanelViewController: NSViewController, WKNavigationDelegate, WKScriptMessa
         widthConstraint.constant = CGFloat.init(panel.width)
         redrawSecurityBar()
         
-        // Set content view curved borders
-        contentView.layer?.cornerRadius = 3.0
-        contentView.layer?.masksToBounds = true
-        
         // Set visit count pill shape
         visitCountLabel.wantsLayer = true
         visitCountLabel.layer?.cornerRadius = visitCountLabel.frame.height / 2.0

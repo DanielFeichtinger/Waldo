@@ -8,7 +8,7 @@
 import Cocoa
 import WebKit
 
-class ViewController: NSViewController, NSSearchFieldDelegate, NSWindowDelegate {
+class ViewController: NSViewController, NSSearchFieldDelegate, NSWindowDelegate, NSCollectionViewDataSource, NSCollectionViewDelegate {
 
     @IBOutlet weak var workspaceView: NSStackView!
     @IBOutlet weak var workspaceScrollView: NSScrollView!
@@ -18,6 +18,7 @@ class ViewController: NSViewController, NSSearchFieldDelegate, NSWindowDelegate 
     @IBOutlet weak var suggestionsScrollView: NSScrollView!
     @IBOutlet weak var scrollViewLeadingConstraint: NSLayoutConstraint!
     @IBOutlet weak var scrollViewTrailingConstraint: NSLayoutConstraint!
+    @IBOutlet weak var archivedPanelsView: NSCollectionView!
     
     var maxPanelWidth: CGFloat {
         get { return workspaceScrollView.frame.width }
@@ -25,8 +26,12 @@ class ViewController: NSViewController, NSSearchFieldDelegate, NSWindowDelegate 
     
     var paddingWidth: CGFloat! {
         get {
-            // Magic number, how many pixels of a panel overlap when at maximum scroll
-            return workspaceScrollView.frame.width - 100
+            if childViewControllers.count == 0 {
+                return 0
+            } else {
+                // Magic number, how many pixels of a panel overlap when at maximum scroll
+                return workspaceScrollView.frame.width - 100
+            }
         }
     }
     
@@ -34,6 +39,7 @@ class ViewController: NSViewController, NSSearchFieldDelegate, NSWindowDelegate 
     private var activePanelVC: PanelViewController?
     private var suggestionSelected = false
     private var windowResizeDelta = CGFloat.init()
+    private var archivedPanels: [Panel] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,12 +48,18 @@ class ViewController: NSViewController, NSSearchFieldDelegate, NSWindowDelegate 
         suggestionList.delegate = taskDelegate
         suggestionList.dataSource = taskDelegate
         suggestionList.reloadData()
+        
         taskField.delegate = self
         
-        // Set rounded corners on task popup
+        archivedPanelsView.delegate = self
+        archivedPanelsView.dataSource = self
+        archivedPanels = Panel.currentlyClosed(context: managedContext!)
+        
+        // Set shadow on task popup
         taskView.wantsLayer = true
-        taskView.layer?.cornerRadius = 4.0
-        taskView.layer?.masksToBounds = true
+        taskView.shadow = NSShadow()
+        taskView.layer?.shadowRadius = 5.0
+        taskView.layer?.shadowOpacity = 1.0
         
         Panel.currentlyOpen(context: managedContext!).forEach { loadPanel($0) }
     }
@@ -64,6 +76,7 @@ class ViewController: NSViewController, NSSearchFieldDelegate, NSWindowDelegate 
         }
         
         centreActivePanel()
+        archivedPanelsView.scroll(NSPoint.init(x: archivedPanelsView.frame.width, y: 0.0))
     }
     
     override func awakeFromNib() {
@@ -87,9 +100,15 @@ class ViewController: NSViewController, NSSearchFieldDelegate, NSWindowDelegate 
             addPanelFromSuggestion(self)
         } else if taskField.stringValue != "" {
             let task = Task.init(taskField.stringValue)
-            let visit = Visit.init(request: task.urlRequest, intentType: task.intentType, intentText: task.intentText, context: managedContext!)
-            save()
-            addPanel(visit)
+            for (index, result) in task.taskResults.enumerated() {
+                let visit = Visit.init(request: result.urlRequest, intentType: result.intentType, intentText: result.intentText, context: managedContext!)
+                save()
+                if index == 0 {
+                    addPanel(visit, makeActive: true)
+                } else {
+                    addPanel(visit)
+                }
+            }
             taskView.isHidden = true
         }
     }
@@ -102,7 +121,7 @@ class ViewController: NSViewController, NSSearchFieldDelegate, NSWindowDelegate 
             let request = URLRequest.init(url: URL.init(string: suggestion.url!)!)
             let visit = Visit.init(request: request, intentType: .followedSuggestion, intentText: suggestion.title, context: managedContext!)
             save()
-            addPanel(visit)
+            addPanel(visit, makeActive: true)
         }
         taskView.isHidden = true
     }
@@ -143,6 +162,14 @@ class ViewController: NSViewController, NSSearchFieldDelegate, NSWindowDelegate 
         }
     }
     
+    @IBAction func copyURLToClipboard (_ sender: Any) {
+        if activePanelVC != nil {
+            let pasteboard = NSPasteboard.general
+            pasteboard.declareTypes([NSPasteboard.PasteboardType.string], owner: nil)
+            pasteboard.setString(activePanelVC!.webView!.url?.absoluteString ?? "", forType: NSPasteboard.PasteboardType.string)
+        }
+    }
+    
     // MARK: Task entry functions
     func control(_ control: NSControl, textView: NSTextView, doCommandBy commandSelector: Selector) -> Bool {
         switch commandSelector {
@@ -171,15 +198,15 @@ class ViewController: NSViewController, NSSearchFieldDelegate, NSWindowDelegate 
     
     // MARK: Public panel management methods
     func changeActivePanel(_ panelViewController: PanelViewController) {
-        if activePanelVC != nil {
-            activePanelVC!.isActive = false
+        if panelViewController != activePanelVC {
+            activePanelVC?.isActive = false
+            panelViewController.isActive = true
+            activePanelVC = panelViewController
+            view.window?.makeFirstResponder(activePanelVC?.backButton)
         }
-        panelViewController.isActive = true
-        activePanelVC = panelViewController
-        view.window?.makeFirstResponder(activePanelVC?.backButton)
     }
     
-    func addPanel(_ visit: Visit, from: NSView? = nil, withWebView webView: WaldoWebView? = nil) {
+    func addPanel(_ visit: Visit, from: NSView? = nil, withWebView webView: WaldoWebView? = nil, makeActive: Bool = false) {
         let defaultWidth = UserDefaults.standard.float(forKey: "PanelWidth")
         let width = defaultWidth == 0.0 ? 550.0 : defaultWidth
         let panel = Panel.init(visit: visit, width: width, context: managedContext!)
@@ -190,10 +217,12 @@ class ViewController: NSViewController, NSSearchFieldDelegate, NSWindowDelegate 
             workspaceView.insertView(panelViewController.view, at: newPanelIndex, in: .trailing)
         } else {
             workspaceView.addView(panelViewController.view, in: .trailing)
-            changeActivePanel(panelViewController)
-            centreActivePanel()
+            if makeActive {
+                changeActivePanel(panelViewController)
+                centreActivePanel()
+            }
         }
-        setPanelIndicies()
+        workspaceDidChange()
         
         if webView == nil {
             panelViewController.navigate(visit)
@@ -214,15 +243,32 @@ class ViewController: NSViewController, NSSearchFieldDelegate, NSWindowDelegate 
         }
         
         let panel = panelViewController.panel!
+        let config = WKSnapshotConfiguration.init()
+        let width = panelViewController.webView.frame.width
+        
         panel.closedAt = NSDate.init()
         panel.isClosed = true
         save()
+        archivedPanels.append(panel)
+        
+        config.rect = NSRect.init(x: 0, y: 0, width: width, height: width)
+        panelViewController.webView.takeSnapshot(with: config) { (image, error) in
+            if let image = image {
+                panel.image = image.png as NSData?
+                self.archivedPanelsView.reloadData()
+            } else {
+                debugPrint(error!.localizedDescription)
+            }
+        }
         
         workspaceView.removeView(panelViewController.view)
         let index = childViewControllers.index(of: panelViewController)!
         removeChildViewController(at: index)
-        setPanelIndicies()
+        workspaceDidChange()
         centreActivePanel()
+        archivedPanelsView.reloadData()
+        archivedPanelsView.layoutSubtreeIfNeeded()
+        archivedPanelsView.scroll(NSPoint.init(x: archivedPanelsView.frame.width, y: 0.0))
     }
     
     func windowDidResize(_ notification: Notification) {
@@ -248,6 +294,29 @@ class ViewController: NSViewController, NSSearchFieldDelegate, NSWindowDelegate 
         }
     }
     
+    // MARK: Collection View Data Source
+    func collectionView(_ collectionView: NSCollectionView, numberOfItemsInSection section: Int) -> Int {
+        return archivedPanels.count
+    }
+    
+    func collectionView(_ collectionView: NSCollectionView, itemForRepresentedObjectAt indexPath: IndexPath) -> NSCollectionViewItem {
+        let panel = archivedPanels[indexPath.item]
+        let item = collectionView.makeItem(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "ArchivedPanelViewItem"), for: indexPath) as! ArchivedPanelViewItem
+        item.panel = panel
+        return item
+    }
+    
+    func collectionView(_ collectionView: NSCollectionView, didSelectItemsAt indexPaths: Set<IndexPath>) {
+        let index = indexPaths.first!.item
+        let panel = archivedPanels[index]
+        panel.closedAt = nil
+        panel.isClosed = false
+        loadPanel(panel)
+        archivedPanels.remove(at: index)
+        changeActivePanel(panelViewController(at: Int.init(panel.positionIndex)))
+        archivedPanelsView.reloadData()
+    }
+    
     // MARK: Private methods
     private func loadPanel(_ panel: Panel, at index: Int? = nil) {
         let panelViewController = initPanelVC(for: panel)
@@ -260,7 +329,7 @@ class ViewController: NSViewController, NSSearchFieldDelegate, NSWindowDelegate 
         } else {
             workspaceView.insertView(panelView, at: index!, in: .trailing)
         }
-        setPanelIndicies()
+        workspaceDidChange()
         panelViewController.loadResource()
     }
     
@@ -293,11 +362,15 @@ class ViewController: NSViewController, NSSearchFieldDelegate, NSWindowDelegate 
         return childViewControllers.filter { $0.view == workspaceView.views[index] }.first as! PanelViewController
     }
     
-    private func setPanelIndicies() {
+    private func workspaceDidChange() {
         childViewControllers.forEach { (panelVC) in
             (panelVC as! PanelViewController).panel.positionIndex =
                 Int16.init(workspaceView.views.index(of: panelVC.view)!)
         }
+        
+        scrollViewLeadingConstraint.constant = paddingWidth
+        scrollViewTrailingConstraint.constant = paddingWidth
+
         save()
     }
     
